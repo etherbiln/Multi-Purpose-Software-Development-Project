@@ -27,6 +27,4 @@ public:
 	Person getReturnPerson(Person person) {}
 	void getShowPerson(Person person){}
 };
-
-
 #endif

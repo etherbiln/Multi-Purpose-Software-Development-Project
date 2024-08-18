@@ -1,0 +1,52 @@
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Visual Studio specific
+.vscode/
+.vs/
+*.vcxproj*
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.sdf
+*.ipch
+*.pch
+*.obj
+*.tlog
+*.lastbuildstate
+*.log
+*.tmp
+*.ncb
+*.opensdf
+*.filters
+*.pdb
+*.opendb
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.VC.db
+*.VC.opendb
+*.idb
+*.dir
+*.lastbuildstate
+*.cache
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+Testing/
+CTestTestfile.cmake
+
+# Build directories
+build/
+Debug/
+Release/
+x64/
+x86/

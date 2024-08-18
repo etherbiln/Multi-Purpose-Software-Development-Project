@@ -1,7 +1,6 @@
 #include "person.h";
 #include "student.h";
 
-
 #include <iostream>
 
 //// Person ////

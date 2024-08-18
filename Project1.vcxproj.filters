@@ -15,14 +15,14 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="kaynak.cpp">
+    <ClCompile Include="source.cpp">
       <Filter>Kaynak Dosyalar</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Kaynak Dosyalar</Filter>
     </ClCompile>
     <ClCompile Include="tree.h">
-      <Filter>Kaynak Dosyalar</Filter>
+      <Filter>Üst Bilgi Dosyaları</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

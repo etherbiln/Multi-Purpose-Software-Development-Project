@@ -4,7 +4,6 @@
 
 #include <iostream>
 
-// taban sýnýf
 class Person {
 protected:
 	int numberId;

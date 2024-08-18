@@ -1,0 +1,3 @@
+C:/Users/yakup/Desktop/myCpp/myCpp/out/build/x64-debug/CMakeFiles/MyProject.dir
+C:/Users/yakup/Desktop/myCpp/myCpp/out/build/x64-debug/CMakeFiles/edit_cache.dir
+C:/Users/yakup/Desktop/myCpp/myCpp/out/build/x64-debug/CMakeFiles/rebuild_cache.dir

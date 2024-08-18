@@ -1,27 +1,22 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
-#include "./person.h";
+#include "person.h"
 
-
-class Student :public Person {
+class Student : public Person {
 private:
-	int note;
-public:
-	Student();
-	Student(int note, int numberId, std::string name, std::string surname);
-	~Student();
-	
-	//GET
-	int getNoteFunc(Student student) {};
-	int getNote() { return note; }
-	
-	//SET
-	void setNote(int note) { this->note = note; }
+    int note;
 
-	//--//
-	Student getReturnStudent(Student student) {}
-	void getShowStudent(Student student) {}
+public:
+    Student();
+    Student(int note, int numberId, const std::string& name, const std::string& surname);
+    ~Student();
+
+    // GETTER
+    int getNote() const { return note; }
+
+    // SETTER
+    void setNote(int note) { this->note = note; }
 };
 
-#endif
+#endif // STUDENT_H

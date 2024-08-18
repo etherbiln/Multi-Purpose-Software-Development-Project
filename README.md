@@ -39,7 +39,3 @@ The project can be used in various software development areas, such as a student
 ## Contributing
 
 If you would like to contribute, please send a pull request or open an issue. Any contributions and feedback are valuable.
-
-## License
-
-This project is licensed under the MIT License. For more information, see the `LICENSE` file.

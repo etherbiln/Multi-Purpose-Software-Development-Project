@@ -2,28 +2,27 @@
 #define PERSON_H
 
 #include <string>
-#include <iostream>
 
 class Person {
 protected:
-	int numberId;
-	std::string name;
-	std::string surname;
-public:
-	Person();
-	Person(int numberId, std::string name, std::string surname);
-	~Person();
+    int numberId;
+    std::string name;
+    std::string surname;
 
-	// GET
-	int getnumber() { return numberId; }
-	std::string getName() { return name; }
-	std::string getSurname() { return surname; }
-	//SET
-	void setNumberId(int numberId) { this->numberId = numberId; }
-	void setName(std::string name) { this->name = name; }
-	void setSurname(std::string surname) { this->surname = surname; }
-	//--//
-	Person getReturnPerson(Person person) {}
-	void getShowPerson(Person person){}
+public:
+    Person();
+    Person(int numberId, const std::string& name, const std::string& surname);
+    virtual ~Person();
+
+    // GETTERS
+    int getnumber() const { return numberId; }
+    std::string getName() const { return name; }
+    std::string getSurname() const { return surname; }
+
+    // SETTERS
+    void setNumberId(int numberId) { this->numberId = numberId; }
+    void setName(const std::string& name) { this->name = name; }
+    void setSurname(const std::string& surname) { this->surname = surname; }
 };
-#endif
+
+#endif // PERSON_H

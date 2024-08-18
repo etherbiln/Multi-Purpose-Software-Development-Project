@@ -12,7 +12,9 @@
     ]
   },
   "ExpandedNodes": [
-    ""
+    "",
+    "\\data"
   ],
+  "SelectedNode": "\\data\\students_data.txt",
   "PreviewInSolutionExplorer": false
 }

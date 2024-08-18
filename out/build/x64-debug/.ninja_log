@@ -1,6 +1,0 @@
-# ninja log v5
-3	667	7457237201797183	CMakeFiles/myCpp.dir/myCpp.cpp.obj	9e29d55864717bb6
-7	373	7457242282715655	CMakeFiles/MyProject.dir/src/source.cpp.obj	6e1000e2b734940a
-668	956	7457237204465434	myCpp.exe	681923041607fef9
-3	498	7457242283948176	CMakeFiles/MyProject.dir/src/main.cpp.obj	72dc2a48274e6b4f
-498	790	7457242286672770	MyProject.exe	f2339d45bd50543f

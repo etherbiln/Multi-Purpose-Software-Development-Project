@@ -1,16 +1,16 @@
-ï»¿cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.10)
 
-# Proje adÄ± ve sÃ¼rÃ¼mÃ¼
+# Proje adı ve sürümü
 project(MyProject VERSION 1.0)
 
-# C++ standardÄ±nÄ± belirleyin
+# C++ standardını belirleyin
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Include dizinlerini belirtin
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
-# Kaynak dosyalarÄ±nÄ± tanÄ±mlayÄ±n
+# Kaynak dosyalarını tanımlayın
 set(SOURCES
     src/main.cpp
     src/person.cpp
@@ -18,15 +18,15 @@ set(SOURCES
     src/student_manager.cpp
 )
 
-# Test dosyalarÄ±nÄ± tanÄ±mlayÄ±n
+# Test dosyalarını tanımlayın
 set(TEST_SOURCES
     tests/test_student.cpp
 )
 
-# Hedef executable dosyayÄ± oluÅŸturun
+# Hedef executable dosyayı oluşturun
 add_executable(MyProject ${SOURCES})
 
-# Google Test ve diÄŸer kÃ¼tÃ¼phaneleri baÄŸlayÄ±n
+# Google Test ve diğer kütüphaneleri bağlayın
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
@@ -34,5 +34,8 @@ include_directories(${GTEST_INCLUDE_DIRS})
 add_executable(runTests ${TEST_SOURCES})
 target_link_libraries(runTests ${GTEST_LIBRARIES} pthread)
 
-# `runTests` hedefini `MyProject` hedefine baÄŸÄ±mlÄ± yapÄ±n
+# Testleri derleme hedefine ekleyin
 add_dependencies(runTests MyProject)
+
+# Varsayılan hedefler
+add_custom_target(tests COMMAND runTests)

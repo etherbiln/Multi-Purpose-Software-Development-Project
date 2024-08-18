@@ -1,99 +1,85 @@
 #include <iostream>
 #include <thread>
-#include <stdio.h>
-#include <list>
+#include "../include/student_manager.h"
 
-using namespace std;
+StudentManager manager;
 
-#include "../include/person.h";
-#include "../include/student.h";
-
-void getShowPerson(Person person) {
-    std::printf("\n--- Person Data ---\n\n");
-    std::cout << "Person Name: " << person.getName() << std::endl;
-    std::cout << "Person Surname: " << person.getSurname() << std::endl;
-    std::cout << "Person Id: " << person.getnumber() << std::endl;
-}
-void getShowStudent(Student student) {
-    printf("\n--- Student Data ---\n\n");
-    std::cout << "Student Name: " << student.getName() << std::endl;
-    std::cout << "Student Surname: " << student.getSurname() << std::endl;
-    std::cout << "Student Id: " << student.getnumber() << std::endl;
-    std::cout << "Student Note: " << student.getNote() << std::endl;
-}
-
-list<Student> listStudent;
-Student student;
-
-void addStudentLogic(int number, int note,string name, string surname) {
+void addStudentThread(int number, int note, const std::string& name, const std::string& surname) {
     Student newStudent(note, number, name, surname);
-    listStudent.push_back(newStudent);
+    manager.addStudent(newStudent);
     std::cout << "\nStudent added successfully." << std::endl;
 }
 
-void deleteStudentLogic(int number) {
-    for (auto it = listStudent.begin(); it != listStudent.end(); ++it) {
-        if (it->getnumber() == number) {
-            listStudent.erase(it);
-            std::cout << "\nStudent deleted successfully." << std::endl;
-            return;
-        }
-    }
-    std::cout << "\nStudent not found." << std::endl;
+void removeStudentThread(int number) {
+    manager.removeStudent(number);
+    std::cout << "\nStudent deleted successfully." << std::endl;
 }
 
-void searchStudentLogic(int number) {
-    for (auto& student : listStudent) {
-        if (student.getnumber() == number) {
-            getShowStudent(student);
-            return;
-        }
+void searchStudentThread(int number) {
+    Student* student = manager.findStudent(number);
+    if (student) {
+        std::cout << "\nStudent Name: " << student->getName() << std::endl;
+        std::cout << "Student Surname: " << student->getSurname() << std::endl;
+        std::cout << "Student Id: " << student->getnumber() << std::endl;
+        std::cout << "Student Note: " << student->getNote() << std::endl;
     }
-    std::cout << "\nStudent not found." << std::endl;
+    else {
+        std::cout << "\nStudent not found." << std::endl;
+    }
 }
-
 
 int main() {
     int choice;
 
     while (true) {
-        std::cout << "1- Student add" << std::endl;
-        std::cout << "2- Student delete" << std::endl;
-        std::cout << "3- Student search" << std::endl;
-        std::cout << "4- Exit" << std::endl;
-        std::cout << "Enter data: ";
+        std::cout << "1- Add Student" << std::endl;
+        std::cout << "2- Delete Student" << std::endl;
+        std::cout << "3- Search Student" << std::endl;
+        std::cout << "4- Load Students from File" << std::endl;
+        std::cout << "5- Save Students to File" << std::endl;
+        std::cout << "6- Exit" << std::endl;
+        std::cout << "Enter choice: ";
         std::cin >> choice;
 
         switch (choice) {
         case 1: {
-            string name, surname;
+            std::string name, surname;
             int number, note;
-            std::cout << "\nEnter name, surname, number, and note: ";
+            std::cout << "Enter name, surname, number, and note: ";
             std::cin >> name >> surname >> number >> note;
-            std::thread(addStudentLogic, number, note, name, surname).detach();
+            std::thread(addStudentThread, number, note, name, surname).detach();
             break;
         }
         case 2: {
             int number;
-            std::cout << "\nEnter student number to delete: ";
+            std::cout << "Enter student number to delete: ";
             std::cin >> number;
-            std::thread(deleteStudentLogic, number).detach();
+            std::thread(removeStudentThread, number).detach();
             break;
         }
         case 3: {
             int number;
-            std::cout << "\nEnter student number to search: ";
+            std::cout << "Enter student number to search: ";
             std::cin >> number;
-            std::thread(searchStudentLogic, number).detach();
+            std::thread(searchStudentThread, number).detach();
             break;
         }
-        case 4:
-            std::cout << "\nExiting program." << std::endl;
+        case 4: {
+            manager.loadFromFile("data/students_data.txt");
+            std::cout << "Students loaded from file." << std::endl;
+            break;
+        }
+        case 5: {
+            manager.saveToFile("data/students_data.txt");
+            std::cout << "Students saved to file." << std::endl;
+            break;
+        }
+        case 6:
+            std::cout << "Exiting program." << std::endl;
             return 0;
         default:
-            std::cout << "\nInvalid choice. Please try again." << std::endl;
+            std::cout << "Invalid choice. Please try again." << std::endl;
         }
-
     }
     return 0;
 }

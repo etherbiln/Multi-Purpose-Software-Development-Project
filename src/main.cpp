@@ -65,12 +65,12 @@ int main() {
             break;
         }
         case 4: {
-            manager.loadFromFile("data/students_data.txt");
+            manager.loadFromFile("./data/students_data.txt");
             std::cout << "Students loaded from file." << std::endl;
             break;
         }
         case 5: {
-            manager.saveToFile("data/students_data.txt");
+            manager.saveToFile("./data/students_data.txt");
             std::cout << "Students saved to file." << std::endl;
             break;
         }

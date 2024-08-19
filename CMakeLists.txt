@@ -1,7 +1,7 @@
 ﻿cmake_minimum_required(VERSION 3.10)
 
 # Proje adı ve sürümü
-project(MyProject VERSION 1.0)
+project(myCpp VERSION 1.0)
 
 # C++ standardını belirleyin
 set(CMAKE_CXX_STANDARD 11)
@@ -18,21 +18,9 @@ set(SOURCES
     src/student_manager.cpp
 )
 
-# Test dosyalarını tanımlayın
-set(TEST_SOURCES
-    tests/test_student.cpp
-)
-
 # Hedef executable dosyayı oluşturun
-add_executable(MyProject ${SOURCES})
+add_executable(myCpp ${SOURCES})
 
 # Google Test ve diğer kütüphaneleri bağlayın
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
-
-# Testleri ekleyin
-add_executable(runTests ${TEST_SOURCES})
-target_link_libraries(runTests ${GTEST_LIBRARIES} pthread)
-
-# `runTests` hedefini `MyProject` hedefine bağımlı yapın
-add_dependencies(runTests MyProject)

@@ -13,8 +13,10 @@
   },
   "ExpandedNodes": [
     "",
-    "\\data"
+    "\\data",
+    "\\out",
+    "\\src"
   ],
-  "SelectedNode": "\\data\\students_data.txt",
+  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }

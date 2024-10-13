@@ -1,12 +1,4 @@
 {
-  "ExpandedNodes": [
-    "",
-    "\\data",
-    "\\out",
-    "\\src"
-  ],
-  "SelectedNode": "\\.gitignore",
-  "PreviewInSolutionExplorer": false,
   "OutputFoldersPerTargetSystem": {
     "Yerel Makine": [
       "out\\build\\x64-debug",
@@ -28,5 +20,13 @@
       "out\\build\\x86-release",
       "out\\install\\x86-release"
     ]
-  }
+  },
+  "ExpandedNodes": [
+    "",
+    "\\data",
+    "\\out",
+    "\\src"
+  ],
+  "SelectedNode": "\\src\\main.cpp",
+  "PreviewInSolutionExplorer": false
 }
